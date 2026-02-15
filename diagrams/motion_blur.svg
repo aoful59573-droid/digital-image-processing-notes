@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 200">
+  <defs>
+    <marker id="mb-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- レンズ -->
+  <ellipse cx="200" cy="100" rx="6" ry="50" fill="none" stroke="#1976d2" stroke-width="2"/>
+  <text x="200" y="28" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#1976d2">レンズ</text>
+
+  <!-- 光軸 -->
+  <line x1="40" y1="100" x2="440" y2="100" stroke="#aaa" stroke-width="0.8" stroke-dasharray="4,3"/>
+
+  <!-- 撮像素子 -->
+  <line x1="110" y1="60" x2="110" y2="140" stroke="#c62828" stroke-width="2"/>
+  <text x="75" y="50" font-size="9" font-family="sans-serif" fill="#c62828">撮像素子</text>
+
+  <!-- 被写体（移動中） -->
+  <circle cx="370" cy="70" r="5" fill="#2e7d32"/>
+  <text x="385" y="65" font-size="9" font-family="sans-serif" fill="#2e7d32">被写体</text>
+  <!-- 移動矢印 -->
+  <line x1="370" y1="70" x2="420" y2="70" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#mb-arr)"/>
+  <text x="395" y="60" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#2e7d32">v</text>
+
+  <!-- 移動量 v・ts -->
+  <line x1="370" y1="82" x2="420" y2="82" stroke="#e65100" stroke-width="1"/>
+  <line x1="370" y1="78" x2="370" y2="86" stroke="#e65100" stroke-width="1"/>
+  <line x1="420" y1="78" x2="420" y2="86" stroke="#e65100" stroke-width="1"/>
+  <text x="395" y="95" text-anchor="middle" font-size="9" font-family="sans-serif" fill="#e65100">v·ts</text>
+
+  <!-- R 距離 -->
+  <line x1="200" y1="170" x2="370" y2="170" stroke="#7b1fa2" stroke-width="1.2"/>
+  <line x1="200" y1="165" x2="200" y2="175" stroke="#7b1fa2" stroke-width="1.2"/>
+  <line x1="370" y1="165" x2="370" y2="175" stroke="#7b1fa2" stroke-width="1.2"/>
+  <text x="285" y="186" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#7b1fa2">R</text>
+
+  <!-- f 距離 -->
+  <line x1="110" y1="170" x2="200" y2="170" stroke="#555" stroke-width="1"/>
+  <line x1="110" y1="165" x2="110" y2="175" stroke="#555" stroke-width="1"/>
+  <text x="155" y="186" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">f</text>
+
+  <!-- 像のブレ（センサー上） -->
+  <line x1="110" y1="118" x2="110" y2="126" stroke="#e65100" stroke-width="2.5"/>
+  <text x="80" y="138" font-size="8" font-family="sans-serif" fill="#e65100">像のブレ</text>
+  <text x="80" y="148" font-size="8" font-family="sans-serif" fill="#e65100">≤ 1画素</text>
+
+  <!-- 光線 -->
+  <line x1="370" y1="70" x2="200" y2="100" stroke="#888" stroke-width="0.7" stroke-dasharray="4,2"/>
+  <line x1="200" y1="100" x2="110" y2="122" stroke="#888" stroke-width="0.7" stroke-dasharray="4,2"/>
+</svg>
