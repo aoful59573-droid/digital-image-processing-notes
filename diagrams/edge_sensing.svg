@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="290" font-family="sans-serif">
+  <text x="290" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#222">エッジセンシング補間（Edge-Sensing Interpolation）</text>
+  <!-- Left: grid setup -->
+  <text x="120" y="44" text-anchor="middle" font-size="11" font-weight="bold" fill="#555">水平エッジを含むベイヤー配列</text>
+  <!-- 5x3 Bayer grid, x=20, y=52, cell=40px -->
+  <!-- Dark region (rows 0-1): bg #c8c8c8 -->
+  <!-- Bright region (rows 2): bg #f5f5f5 -->
+  <!-- Row 0: R G R G R  (dark) -->
+  <rect x="20" y="52" width="39" height="39" fill="#bdbdbd" stroke="#555" stroke-width="1"/><text x="39" y="76" text-anchor="middle" font-size="12" fill="#555">R</text>
+  <rect x="60" y="52" width="39" height="39" fill="#bdbdbd" stroke="#555" stroke-width="1"/><text x="79" y="76" text-anchor="middle" font-size="12" fill="#555">G</text>
+  <rect x="100" y="52" width="39" height="39" fill="#bdbdbd" stroke="#555" stroke-width="1"/><text x="119" y="76" text-anchor="middle" font-size="12" fill="#555">R</text>
+  <rect x="140" y="52" width="39" height="39" fill="#bdbdbd" stroke="#555" stroke-width="1"/><text x="159" y="76" text-anchor="middle" font-size="12" fill="#555">G</text>
+  <rect x="180" y="52" width="39" height="39" fill="#bdbdbd" stroke="#555" stroke-width="1"/><text x="199" y="76" text-anchor="middle" font-size="12" fill="#555">R</text>
+  <!-- Row 1: G B G B G  (dark), G(1,2) annotated -->
+  <rect x="20" y="92" width="39" height="39" fill="#bdbdbd" stroke="#555" stroke-width="1"/><text x="39" y="116" text-anchor="middle" font-size="12" fill="#555">G</text>
+  <rect x="60" y="92" width="39" height="39" fill="#bdbdbd" stroke="#555" stroke-width="1"/><text x="79" y="116" text-anchor="middle" font-size="12" fill="#555">B</text>
+  <rect x="100" y="92" width="39" height="39" fill="#bdbdbd" stroke="#2e7d32" stroke-width="2.5"/><text x="119" y="108" text-anchor="middle" font-size="10" fill="#2e7d32">G(1,2)</text><text x="119" y="122" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e7d32">=20</text>
+  <rect x="140" y="92" width="39" height="39" fill="#bdbdbd" stroke="#555" stroke-width="1"/><text x="159" y="116" text-anchor="middle" font-size="12" fill="#555">B</text>
+  <rect x="180" y="92" width="39" height="39" fill="#bdbdbd" stroke="#555" stroke-width="1"/><text x="199" y="116" text-anchor="middle" font-size="12" fill="#555">G</text>
+  <!-- Horizontal edge line -->
+  <line x1="15" y1="131" x2="225" y2="131" stroke="#e53935" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <text x="235" y="135" font-size="10" fill="#e53935">← エッジ</text>
+  <!-- Row 2: R G R G R  (bright), center R(2,2) highlighted, G(2,1) and G(2,3) annotated -->
+  <rect x="20" y="132" width="39" height="39" fill="#f5f5f5" stroke="#555" stroke-width="1"/><text x="39" y="156" text-anchor="middle" font-size="12" fill="#888">R</text>
+  <rect x="60" y="132" width="39" height="39" fill="#f5f5f5" stroke="#2e7d32" stroke-width="2.5"/><text x="79" y="145" text-anchor="middle" font-size="10" fill="#2e7d32">G(2,1)</text><text x="79" y="159" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e7d32">=210</text>
+  <rect x="100" y="132" width="39" height="39" fill="#fff176" stroke="#e53935" stroke-width="3"/><text x="119" y="148" text-anchor="middle" font-size="10" fill="#c62828">R(2,2)</text><text x="119" y="164" text-anchor="middle" font-size="10" fill="#555">G=?</text>
+  <rect x="140" y="132" width="39" height="39" fill="#f5f5f5" stroke="#2e7d32" stroke-width="2.5"/><text x="159" y="145" text-anchor="middle" font-size="10" fill="#2e7d32">G(2,3)</text><text x="159" y="159" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e7d32">=215</text>
+  <rect x="180" y="132" width="39" height="39" fill="#f5f5f5" stroke="#555" stroke-width="1"/><text x="199" y="156" text-anchor="middle" font-size="12" fill="#888">R</text>
+  <!-- Row 3: G B G B G (bright), G(3,2) annotated -->
+  <rect x="20" y="172" width="39" height="39" fill="#f5f5f5" stroke="#555" stroke-width="1"/><text x="39" y="196" text-anchor="middle" font-size="12" fill="#888">G</text>
+  <rect x="60" y="172" width="39" height="39" fill="#f5f5f5" stroke="#555" stroke-width="1"/><text x="79" y="196" text-anchor="middle" font-size="12" fill="#888">B</text>
+  <rect x="100" y="172" width="39" height="39" fill="#f5f5f5" stroke="#2e7d32" stroke-width="2.5"/><text x="119" y="185" text-anchor="middle" font-size="10" fill="#2e7d32">G(3,2)</text><text x="119" y="199" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e7d32">=220</text>
+  <rect x="140" y="172" width="39" height="39" fill="#f5f5f5" stroke="#555" stroke-width="1"/><text x="159" y="196" text-anchor="middle" font-size="12" fill="#888">B</text>
+  <rect x="180" y="172" width="39" height="39" fill="#f5f5f5" stroke="#555" stroke-width="1"/><text x="199" y="196" text-anchor="middle" font-size="12" fill="#888">R</text>
+  <!-- Right: comparison -->
+  <!-- Box 1: Bilinear (wrong) -->
+  <rect x="275" y="48" width="290" height="108" fill="#fff8f8" stroke="#e57373" stroke-width="1.5" rx="6"/>
+  <text x="420" y="68" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">バイリニア補間（4方向すべて使用）</text>
+  <text x="285" y="88" font-size="11" fill="#333">縦方向: |G(1,2) − G(3,2)| = |20 − 220| = 200  ← 大</text>
+  <text x="285" y="106" font-size="11" fill="#333">横方向: |G(2,1) − G(2,3)| = |210 − 215| =    5  ← 小</text>
+  <text x="285" y="124" font-size="11" fill="#c62828">G̃ = (20+220+210+215)/4 = 166  ← エッジを横断 → 偽色</text>
+  <text x="550" y="148" text-anchor="middle" font-size="16" fill="#c62828">✗</text>
+  <!-- Box 2: Edge sensing (correct) -->
+  <rect x="275" y="168" width="290" height="108" fill="#f1f8e9" stroke="#81c784" stroke-width="1.5" rx="6"/>
+  <text x="420" y="188" text-anchor="middle" font-size="12" font-weight="bold" fill="#2e7d32">エッジセンシング補間</text>
+  <text x="285" y="208" font-size="11" fill="#333">縦方向勾配 = 200 (大) → エッジ横断 → 使わない</text>
+  <text x="285" y="226" font-size="11" fill="#333">横方向勾配 =   5 (小) → 均一  →  横方向で補間</text>
+  <text x="285" y="248" font-size="11" fill="#2e7d32">G̃ = (G(2,1)+G(2,3))/2 = (210+215)/2 = 212.5  ✓</text>
+  <text x="550" y="268" text-anchor="middle" font-size="16" fill="#2e7d32">✓</text>
+</svg>

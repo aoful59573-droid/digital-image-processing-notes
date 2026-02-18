@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" font-family="sans-serif">
+  <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#222">Basler acA1300-60gc 分光感度特性（模式図）</text>
+  <rect x="60" y="35" width="500" height="265" fill="#f9f9f9" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="122.5" y1="35" x2="122.5" y2="300" stroke="#e0e0e0" stroke-dasharray="3,3"/>
+  <line x1="185" y1="35" x2="185" y2="300" stroke="#e0e0e0" stroke-dasharray="3,3"/>
+  <line x1="247.5" y1="35" x2="247.5" y2="300" stroke="#e0e0e0" stroke-dasharray="3,3"/>
+  <line x1="310" y1="35" x2="310" y2="300" stroke="#e0e0e0" stroke-dasharray="3,3"/>
+  <line x1="372.5" y1="35" x2="372.5" y2="300" stroke="#e0e0e0" stroke-dasharray="3,3"/>
+  <line x1="435" y1="35" x2="435" y2="300" stroke="#e0e0e0" stroke-dasharray="3,3"/>
+  <line x1="497.5" y1="35" x2="497.5" y2="300" stroke="#e0e0e0" stroke-dasharray="3,3"/>
+  <line x1="60" y1="247" x2="560" y2="247" stroke="#e0e0e0" stroke-dasharray="3,3"/>
+  <line x1="60" y1="194" x2="560" y2="194" stroke="#e0e0e0" stroke-dasharray="3,3"/>
+  <line x1="60" y1="141" x2="560" y2="141" stroke="#e0e0e0" stroke-dasharray="3,3"/>
+  <line x1="60" y1="88" x2="560" y2="88" stroke="#e0e0e0" stroke-dasharray="3,3"/>
+  <line x1="60" y1="35" x2="60" y2="300" stroke="#444" stroke-width="1.5"/>
+  <line x1="60" y1="300" x2="560" y2="300" stroke="#444" stroke-width="1.5"/>
+  <!-- Blue channel -->
+  <polyline points="60,292 85,234 110,128 122.5,88 135,115 160,181 185,260 210,289 260,297 560,297"
+    fill="none" stroke="#1565c0" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Green channel -->
+  <polyline points="60,295 135,279 185,234 210,154 235,35 247.5,56 260,101 285,181 310,260 335,292 372.5,297 560,300"
+    fill="none" stroke="#2e7d32" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Red channel -->
+  <polyline points="60,297 185,295 235,289 260,274 285,215 310,120 335,62 360,69 385,109 410,162 435,213 460,255 497.5,284 535,295 560,297"
+    fill="none" stroke="#c62828" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- X ticks -->
+  <line x1="60" y1="300" x2="60" y2="306" stroke="#444" stroke-width="1.5"/>
+  <line x1="122.5" y1="300" x2="122.5" y2="306" stroke="#444" stroke-width="1.5"/>
+  <line x1="185" y1="300" x2="185" y2="306" stroke="#444" stroke-width="1.5"/>
+  <line x1="247.5" y1="300" x2="247.5" y2="306" stroke="#444" stroke-width="1.5"/>
+  <line x1="310" y1="300" x2="310" y2="306" stroke="#444" stroke-width="1.5"/>
+  <line x1="372.5" y1="300" x2="372.5" y2="306" stroke="#444" stroke-width="1.5"/>
+  <line x1="435" y1="300" x2="435" y2="306" stroke="#444" stroke-width="1.5"/>
+  <line x1="497.5" y1="300" x2="497.5" y2="306" stroke="#444" stroke-width="1.5"/>
+  <line x1="560" y1="300" x2="560" y2="306" stroke="#444" stroke-width="1.5"/>
+  <!-- Y ticks -->
+  <line x1="60" y1="300" x2="54" y2="300" stroke="#444" stroke-width="1.5"/>
+  <line x1="60" y1="247" x2="54" y2="247" stroke="#444" stroke-width="1.5"/>
+  <line x1="60" y1="194" x2="54" y2="194" stroke="#444" stroke-width="1.5"/>
+  <line x1="60" y1="141" x2="54" y2="141" stroke="#444" stroke-width="1.5"/>
+  <line x1="60" y1="88" x2="54" y2="88" stroke="#444" stroke-width="1.5"/>
+  <line x1="60" y1="35" x2="54" y2="35" stroke="#444" stroke-width="1.5"/>
+  <!-- X labels -->
+  <text x="60" y="318" text-anchor="middle" font-size="11" fill="#555">400</text>
+  <text x="122.5" y="318" text-anchor="middle" font-size="11" fill="#555">450</text>
+  <text x="185" y="318" text-anchor="middle" font-size="11" fill="#555">500</text>
+  <text x="247.5" y="318" text-anchor="middle" font-size="11" fill="#555">550</text>
+  <text x="310" y="318" text-anchor="middle" font-size="11" fill="#555">600</text>
+  <text x="372.5" y="318" text-anchor="middle" font-size="11" fill="#555">650</text>
+  <text x="435" y="318" text-anchor="middle" font-size="11" fill="#555">700</text>
+  <text x="497.5" y="318" text-anchor="middle" font-size="11" fill="#555">750</text>
+  <text x="560" y="318" text-anchor="middle" font-size="11" fill="#555">800</text>
+  <text x="310" y="338" text-anchor="middle" font-size="12" fill="#444">波長 λ [nm]</text>
+  <!-- Y labels -->
+  <text x="53" y="304" text-anchor="end" font-size="11" fill="#555">0</text>
+  <text x="53" y="251" text-anchor="end" font-size="11" fill="#555">0.2</text>
+  <text x="53" y="198" text-anchor="end" font-size="11" fill="#555">0.4</text>
+  <text x="53" y="145" text-anchor="end" font-size="11" fill="#555">0.6</text>
+  <text x="53" y="92" text-anchor="end" font-size="11" fill="#555">0.8</text>
+  <text x="53" y="39" text-anchor="end" font-size="11" fill="#555">1.0</text>
+  <text x="15" y="167" text-anchor="middle" font-size="12" fill="#444" transform="rotate(-90,15,167)">相対感度</text>
+  <!-- Legend -->
+  <line x1="110" y1="335" x2="138" y2="335" stroke="#c62828" stroke-width="2.5"/>
+  <text x="143" y="339" font-size="12" fill="#333">R（赤チャンネル）</text>
+  <line x1="270" y1="335" x2="298" y2="335" stroke="#2e7d32" stroke-width="2.5"/>
+  <text x="303" y="339" font-size="12" fill="#333">G（緑チャンネル）</text>
+  <line x1="430" y1="335" x2="458" y2="335" stroke="#1565c0" stroke-width="2.5"/>
+  <text x="463" y="339" font-size="12" fill="#333">B（青チャンネル）</text>
+</svg>

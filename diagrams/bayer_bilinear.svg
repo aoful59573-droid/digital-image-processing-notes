@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="340" font-family="sans-serif">
+  <text x="280" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#222">バイリニア補間（Bilinear Interpolation）</text>
+  <!-- 5x5 Bayer grid, x=20, y=48, cell=44px -->
+  <!-- Bayer RGGB pattern -->
+  <!-- Row 0: R G R G R -->
+  <rect x="20" y="48" width="43" height="43" fill="#ef9a9a" stroke="#555" stroke-width="1"/><text x="41" y="74" text-anchor="middle" font-size="13" fill="#c62828">R</text>
+  <rect x="64" y="48" width="43" height="43" fill="#a5d6a7" stroke="#555" stroke-width="1"/><text x="85" y="74" text-anchor="middle" font-size="13" fill="#2e7d32">G</text>
+  <rect x="108" y="48" width="43" height="43" fill="#ef9a9a" stroke="#555" stroke-width="1"/><text x="129" y="74" text-anchor="middle" font-size="13" fill="#c62828">R</text>
+  <rect x="152" y="48" width="43" height="43" fill="#a5d6a7" stroke="#555" stroke-width="1"/><text x="173" y="74" text-anchor="middle" font-size="13" fill="#2e7d32">G</text>
+  <rect x="196" y="48" width="43" height="43" fill="#ef9a9a" stroke="#555" stroke-width="1"/><text x="217" y="74" text-anchor="middle" font-size="13" fill="#c62828">R</text>
+  <!-- Row 1: G B G B G -->
+  <rect x="20" y="92" width="43" height="43" fill="#a5d6a7" stroke="#555" stroke-width="1"/><text x="41" y="118" text-anchor="middle" font-size="13" fill="#2e7d32">G</text>
+  <rect x="64" y="92" width="43" height="43" fill="#90caf9" stroke="#555" stroke-width="1"/><text x="85" y="118" text-anchor="middle" font-size="13" fill="#1565c0">B</text>
+  <rect x="108" y="92" width="43" height="43" fill="#a5d6a7" stroke="#3a3" stroke-width="2.5"/><text x="129" y="118" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">G</text>
+  <rect x="152" y="92" width="43" height="43" fill="#90caf9" stroke="#555" stroke-width="1"/><text x="85" y="118" text-anchor="middle" font-size="13" fill="#1565c0">B</text>
+  <rect x="152" y="92" width="43" height="43" fill="#90caf9" stroke="#555" stroke-width="1"/><text x="173" y="118" text-anchor="middle" font-size="13" fill="#1565c0">B</text>
+  <rect x="196" y="92" width="43" height="43" fill="#a5d6a7" stroke="#555" stroke-width="1"/><text x="217" y="118" text-anchor="middle" font-size="13" fill="#2e7d32">G</text>
+  <!-- Row 2: R G [R] G R  (center R highlighted) -->
+  <rect x="20" y="136" width="43" height="43" fill="#ef9a9a" stroke="#555" stroke-width="1"/><text x="41" y="162" text-anchor="middle" font-size="13" fill="#c62828">R</text>
+  <rect x="64" y="136" width="43" height="43" fill="#a5d6a7" stroke="#3a3" stroke-width="2.5"/><text x="85" y="162" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">G</text>
+  <rect x="108" y="136" width="43" height="43" fill="#fff176" stroke="#e53935" stroke-width="3"/><text x="129" y="162" text-anchor="middle" font-size="14" font-weight="bold" fill="#c62828">R</text>
+  <rect x="152" y="136" width="43" height="43" fill="#a5d6a7" stroke="#3a3" stroke-width="2.5"/><text x="173" y="162" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">G</text>
+  <rect x="196" y="136" width="43" height="43" fill="#ef9a9a" stroke="#555" stroke-width="1"/><text x="217" y="162" text-anchor="middle" font-size="13" fill="#c62828">R</text>
+  <!-- Row 3: G B G B G -->
+  <rect x="20" y="180" width="43" height="43" fill="#a5d6a7" stroke="#555" stroke-width="1"/><text x="41" y="206" text-anchor="middle" font-size="13" fill="#2e7d32">G</text>
+  <rect x="64" y="180" width="43" height="43" fill="#90caf9" stroke="#5b5" stroke-width="2.5"/><text x="85" y="206" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565c0">B</text>
+  <rect x="108" y="180" width="43" height="43" fill="#a5d6a7" stroke="#3a3" stroke-width="2.5"/><text x="129" y="206" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">G</text>
+  <rect x="152" y="180" width="43" height="43" fill="#90caf9" stroke="#5b5" stroke-width="2.5"/><text x="173" y="206" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565c0">B</text>
+  <rect x="196" y="180" width="43" height="43" fill="#a5d6a7" stroke="#555" stroke-width="1"/><text x="217" y="206" text-anchor="middle" font-size="13" fill="#2e7d32">G</text>
+  <!-- Row 4: R G R G R -->
+  <rect x="20" y="224" width="43" height="43" fill="#ef9a9a" stroke="#555" stroke-width="1"/><text x="41" y="250" text-anchor="middle" font-size="13" fill="#c62828">R</text>
+  <rect x="64" y="224" width="43" height="43" fill="#a5d6a7" stroke="#555" stroke-width="1"/><text x="85" y="250" text-anchor="middle" font-size="13" fill="#2e7d32">G</text>
+  <rect x="108" y="224" width="43" height="43" fill="#ef9a9a" stroke="#555" stroke-width="1"/><text x="129" y="250" text-anchor="middle" font-size="13" fill="#c62828">R</text>
+  <rect x="152" y="224" width="43" height="43" fill="#a5d6a7" stroke="#555" stroke-width="1"/><text x="173" y="250" text-anchor="middle" font-size="13" fill="#2e7d32">G</text>
+  <rect x="196" y="224" width="43" height="43" fill="#ef9a9a" stroke="#555" stroke-width="1"/><text x="217" y="250" text-anchor="middle" font-size="13" fill="#c62828">R</text>
+  <!-- Green arrows from center R(2,2) to 4 adjacent G neighbors -->
+  <defs><marker id="ag" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2e7d32"/></marker>
+  <marker id="ab" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#1565c0"/></marker></defs>
+  <!-- center cx=129.5, cy=157.5 -->
+  <line x1="129" y1="144" x2="129" y2="125" stroke="#2e7d32" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#ag)"/>
+  <line x1="129" y1="171" x2="129" y2="190" stroke="#2e7d32" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#ag)"/>
+  <line x1="116" y1="157" x2="97" y2="157" stroke="#2e7d32" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#ag)"/>
+  <line x1="142" y1="157" x2="163" y2="157" stroke="#2e7d32" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#ag)"/>
+  <!-- Blue dashed arrows to 4 diagonal B neighbors -->
+  <line x1="116" y1="144" x2="97" y2="124" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#ab)"/>
+  <line x1="142" y1="144" x2="162" y2="124" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#ab)"/>
+  <line x1="116" y1="171" x2="97" y2="191" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#ab)"/>
+  <line x1="142" y1="171" x2="162" y2="191" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#ab)"/>
+  <!-- Formulas on the right -->
+  <text x="260" y="65" font-size="12" font-weight="bold" fill="#333">中心画素(2,2) = R の場合</text>
+  <line x1="260" y1="72" x2="545" y2="72" stroke="#ccc" stroke-width="1"/>
+  <text x="260" y="95" font-size="12" fill="#2e7d32">■ G の推定（隣接 G 4画素の平均）:</text>
+  <text x="266" y="117" font-size="12" fill="#333">G̃ = [ G(1,2) + G(3,2)</text>
+  <text x="266" y="135" font-size="12" fill="#333">       + G(2,1) + G(2,3) ] / 4</text>
+  <line x1="260" y1="148" x2="545" y2="148" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="260" y="168" font-size="12" fill="#1565c0">■ B の推定（対角 B 4画素の平均）:</text>
+  <text x="266" y="190" font-size="12" fill="#333">B̃ = [ B(1,1) + B(1,3)</text>
+  <text x="266" y="208" font-size="12" fill="#333">       + B(3,1) + B(3,3) ] / 4</text>
+  <line x1="260" y1="222" x2="545" y2="222" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="260" y="242" font-size="11" fill="#888">★ 太枠 = 補間に使用する画素</text>
+  <text x="260" y="260" font-size="11" fill="#c62828">⚠ エッジ付近では偽色が発生しやすい</text>
+  <!-- Grid title -->
+  <text x="118" y="298" text-anchor="middle" font-size="12" font-weight="bold" fill="#444">ベイヤー配列（5×5）</text>
+</svg>

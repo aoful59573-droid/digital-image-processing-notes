@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="730" height="310" font-family="sans-serif">
+  <text x="365" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#222">ベイヤー配列とカラーデモザイキング</text>
+  <!-- Left: Bayer pattern title -->
+  <text x="120" y="48" text-anchor="middle" font-size="12" font-weight="bold" fill="#444">ベイヤー配列（RGGB）</text>
+  <!-- Bayer 4x4 grid, x=20, y=55, cell=50px -->
+  <!-- Row 0: R G R G -->
+  <rect x="20" y="55" width="49" height="49" fill="#ef5350" stroke="#555" stroke-width="1"/><text x="44" y="84" text-anchor="middle" font-size="14" font-weight="bold" fill="white">R</text>
+  <rect x="70" y="55" width="49" height="49" fill="#66bb6a" stroke="#555" stroke-width="1"/><text x="94" y="84" text-anchor="middle" font-size="14" font-weight="bold" fill="white">G</text>
+  <rect x="120" y="55" width="49" height="49" fill="#ef5350" stroke="#555" stroke-width="1"/><text x="144" y="84" text-anchor="middle" font-size="14" font-weight="bold" fill="white">R</text>
+  <rect x="170" y="55" width="49" height="49" fill="#66bb6a" stroke="#555" stroke-width="1"/><text x="194" y="84" text-anchor="middle" font-size="14" font-weight="bold" fill="white">G</text>
+  <!-- Row 1: G B G B -->
+  <rect x="20" y="105" width="49" height="49" fill="#66bb6a" stroke="#555" stroke-width="1"/><text x="44" y="134" text-anchor="middle" font-size="14" font-weight="bold" fill="white">G</text>
+  <rect x="70" y="105" width="49" height="49" fill="#42a5f5" stroke="#555" stroke-width="1"/><text x="94" y="134" text-anchor="middle" font-size="14" font-weight="bold" fill="white">B</text>
+  <rect x="120" y="105" width="49" height="49" fill="#66bb6a" stroke="#555" stroke-width="1"/><text x="144" y="134" text-anchor="middle" font-size="14" font-weight="bold" fill="white">G</text>
+  <rect x="170" y="105" width="49" height="49" fill="#42a5f5" stroke="#555" stroke-width="1"/><text x="194" y="134" text-anchor="middle" font-size="14" font-weight="bold" fill="white">B</text>
+  <!-- Row 2: R G R G -->
+  <rect x="20" y="155" width="49" height="49" fill="#ef5350" stroke="#555" stroke-width="1"/><text x="44" y="184" text-anchor="middle" font-size="14" font-weight="bold" fill="white">R</text>
+  <rect x="70" y="155" width="49" height="49" fill="#66bb6a" stroke="#555" stroke-width="1"/><text x="94" y="184" text-anchor="middle" font-size="14" font-weight="bold" fill="white">G</text>
+  <rect x="120" y="155" width="49" height="49" fill="#ef5350" stroke="#555" stroke-width="1"/><text x="144" y="184" text-anchor="middle" font-size="14" font-weight="bold" fill="white">R</text>
+  <rect x="170" y="155" width="49" height="49" fill="#66bb6a" stroke="#555" stroke-width="1"/><text x="194" y="184" text-anchor="middle" font-size="14" font-weight="bold" fill="white">G</text>
+  <!-- Row 3: G B G B -->
+  <rect x="20" y="205" width="49" height="49" fill="#66bb6a" stroke="#555" stroke-width="1"/><text x="44" y="234" text-anchor="middle" font-size="14" font-weight="bold" fill="white">G</text>
+  <rect x="70" y="205" width="49" height="49" fill="#42a5f5" stroke="#555" stroke-width="1"/><text x="94" y="234" text-anchor="middle" font-size="14" font-weight="bold" fill="white">B</text>
+  <rect x="120" y="205" width="49" height="49" fill="#66bb6a" stroke="#555" stroke-width="1"/><text x="144" y="234" text-anchor="middle" font-size="14" font-weight="bold" fill="white">G</text>
+  <rect x="170" y="205" width="49" height="49" fill="#42a5f5" stroke="#555" stroke-width="1"/><text x="194" y="234" text-anchor="middle" font-size="14" font-weight="bold" fill="white">B</text>
+  <!-- Arrow -->
+  <line x1="238" y1="155" x2="272" y2="155" stroke="#555" stroke-width="2"/>
+  <polygon points="272,150 282,155 272,160" fill="#555"/>
+  <text x="260" y="145" text-anchor="middle" font-size="10" fill="#555">カラー</text>
+  <text x="260" y="170" text-anchor="middle" font-size="10" fill="#555">デモザイキング</text>
+  <!-- Right: 3 channel grids -->
+  <!-- R channel title -->
+  <text x="355" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">R チャンネル</text>
+  <!-- R channel 4x4, x=295, y=55, cell=30px -->
+  <!-- (0,0)=R, (0,2)=R, (2,0)=R, (2,2)=R; others empty -->
+  <rect x="295" y="55" width="29" height="29" fill="#ef5350" stroke="#aaa" stroke-width="1"/>
+  <rect x="325" y="55" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="339" y="74" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="355" y="55" width="29" height="29" fill="#ef5350" stroke="#aaa" stroke-width="1"/>
+  <rect x="385" y="55" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="399" y="74" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="295" y="85" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="309" y="104" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="325" y="85" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="339" y="104" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="355" y="85" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="369" y="104" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="385" y="85" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="399" y="104" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="295" y="115" width="29" height="29" fill="#ef5350" stroke="#aaa" stroke-width="1"/>
+  <rect x="325" y="115" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="339" y="134" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="355" y="115" width="29" height="29" fill="#ef5350" stroke="#aaa" stroke-width="1"/>
+  <rect x="385" y="115" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="399" y="134" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="295" y="145" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="309" y="164" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="325" y="145" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="339" y="164" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="355" y="145" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="369" y="164" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="385" y="145" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="399" y="164" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <!-- G channel title -->
+  <text x="495" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e7d32">G チャンネル</text>
+  <!-- G channel 4x4, x=435, y=55 -->
+  <!-- G at (0,1),(0,3),(1,0),(1,2),(2,1),(2,3),(3,0),(3,2) -->
+  <rect x="435" y="55" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="449" y="74" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="465" y="55" width="29" height="29" fill="#66bb6a" stroke="#aaa" stroke-width="1"/>
+  <rect x="495" y="55" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="509" y="74" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="525" y="55" width="29" height="29" fill="#66bb6a" stroke="#aaa" stroke-width="1"/>
+  <rect x="435" y="85" width="29" height="29" fill="#66bb6a" stroke="#aaa" stroke-width="1"/>
+  <rect x="465" y="85" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="479" y="104" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="495" y="85" width="29" height="29" fill="#66bb6a" stroke="#aaa" stroke-width="1"/>
+  <rect x="525" y="85" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="539" y="104" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="435" y="115" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="449" y="134" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="465" y="115" width="29" height="29" fill="#66bb6a" stroke="#aaa" stroke-width="1"/>
+  <rect x="495" y="115" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="509" y="134" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="525" y="115" width="29" height="29" fill="#66bb6a" stroke="#aaa" stroke-width="1"/>
+  <rect x="435" y="145" width="29" height="29" fill="#66bb6a" stroke="#aaa" stroke-width="1"/>
+  <rect x="465" y="145" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="479" y="164" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="495" y="145" width="29" height="29" fill="#66bb6a" stroke="#aaa" stroke-width="1"/>
+  <rect x="525" y="145" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="539" y="164" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <!-- B channel title -->
+  <text x="635" y="48" text-anchor="middle" font-size="11" font-weight="bold" fill="#1565c0">B チャンネル</text>
+  <!-- B channel 4x4, x=575, y=55 -->
+  <!-- B at (1,1),(1,3),(3,1),(3,3) -->
+  <rect x="575" y="55" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="589" y="74" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="605" y="55" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="619" y="74" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="635" y="55" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="649" y="74" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="665" y="55" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="679" y="74" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="575" y="85" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="589" y="104" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="605" y="85" width="29" height="29" fill="#42a5f5" stroke="#aaa" stroke-width="1"/>
+  <rect x="635" y="85" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="649" y="104" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="665" y="85" width="29" height="29" fill="#42a5f5" stroke="#aaa" stroke-width="1"/>
+  <rect x="575" y="115" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="589" y="134" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="605" y="115" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="619" y="134" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="635" y="115" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="649" y="134" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="665" y="115" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="679" y="134" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="575" y="145" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="589" y="164" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="605" y="145" width="29" height="29" fill="#42a5f5" stroke="#aaa" stroke-width="1"/>
+  <rect x="635" y="145" width="29" height="29" fill="#eee" stroke="#aaa" stroke-width="1"/><text x="649" y="164" text-anchor="middle" font-size="10" fill="#999">?</text>
+  <rect x="665" y="145" width="29" height="29" fill="#42a5f5" stroke="#aaa" stroke-width="1"/>
+  <!-- Legend note -->
+  <rect x="20" y="270" width="14" height="14" fill="#eee" stroke="#aaa" stroke-width="1"/>
+  <text x="38" y="282" font-size="11" fill="#666">? = 欠損画素（補間が必要）</text>
+  <text x="310" y="285" text-anchor="middle" font-size="11" fill="#666">← カラーデモザイキングで欠損値を補間し、全画素でRGBを復元 →</text>
+</svg>
