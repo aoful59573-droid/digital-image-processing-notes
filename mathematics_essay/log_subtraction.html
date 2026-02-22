@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>対数関数の差 — グラフの意味</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Segoe UI", "Noto Sans JP", sans-serif; background: #f5f7fa; color: #222; line-height: 1.7; }
+  h1 { text-align: center; padding: 32px 16px 8px; font-size: 1.8rem; color: #1a237e; }
+  .subtitle { text-align: center; color: #666; margin-bottom: 32px; font-size: 0.95rem; }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 16px 60px; }
+  .card { background: #fff; border-radius: 12px; padding: 28px 32px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .card h2 { font-size: 1.2rem; color: #1565c0; margin-bottom: 14px; border-left: 4px solid #1565c0; padding-left: 10px; }
+  .card h3 { font-size: 1rem; color: #37474f; margin: 18px 0 8px; }
+  .eq-box { background: #e8eaf6; border-radius: 8px; padding: 14px 20px; margin: 14px 0; text-align: center; font-size: 1.1rem; font-family: "Cambria Math", Georgia, serif; color: #1a237e; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+  canvas { display: block; border-radius: 8px; background: #fafafa; border: 1px solid #e0e0e0; }
+  .caption { font-size: 0.82rem; color: #555; margin-top: 6px; text-align: center; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  th { background: #e3f2fd; color: #0d47a1; padding: 8px 14px; text-align: center; }
+  td { padding: 7px 14px; text-align: center; border-bottom: 1px solid #eee; }
+  .highlight { color: #c62828; font-weight: 600; }
+  .note { background: #fff8e1; border-left: 4px solid #f9a825; padding: 10px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 0.9rem; color: #5d4037; }
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin: 8px 0; font-size: 0.85rem; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 28px; height: 3px; border-radius: 2px; }
+  @media (max-width: 600px) { .grid2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<h1>対数関数の差 — グラフ上の意味</h1>
+<p class="subtitle">3つの視点 · 数と図の融合 · 画像処理への応用</p>
+
+<div class="container">
+
+<!-- ===== SECTION 1 ===== -->
+<div class="card">
+  <h2>① 核心等式：差 = 比率</h2>
+  <div class="eq-box">log f(x) − log g(x) = log <u>f(x)</u> / <u>g(x)</u></div>
+  <p>対数空間における<strong>縦方向の間隔</strong>は、元の空間での<strong>倍率（比率）</strong>に対応する。</p>
+  <table>
+    <tr><th>元の空間での操作</th><th>対数空間での操作</th></tr>
+    <tr><td>f × g</td><td>log f <span class="highlight">+</span> log g</td></tr>
+    <tr><td>f / g</td><td>log f <span class="highlight">−</span> log g</td></tr>
+  </table>
+  <div class="note">📌 グラフ上において、2本の対数曲線のある点での<strong>縦方向の距離</strong>は、その点における元の関数の<strong>比率の対数</strong>である。</div>
+  <canvas id="c1" width="800" height="300"></canvas>
+  <div class="caption">図1：y=ln(x) と y=ln(3x)、縦方向の間隔は常に ln(3) ≈ 1.099（破線で示す）</div>
+</div>
+
+<!-- ===== SECTION 2 ===== -->
+<div class="card">
+  <h2>② 定数倍 = グラフの垂直平行移動</h2>
+  <div class="eq-box">log(c · x) − log(x) = log c = 定数</div>
+  <p>2つの対数関数が定数倍の差しかない場合、それらの曲線は<strong>形が完全に同じ</strong>で、垂直方向に log c だけ移動しているだけである。</p>
+  <div class="grid2">
+    <div>
+      <canvas id="c2" width="380" height="280"></canvas>
+      <div class="caption">図2：y=ln(x), y=ln(2x), y=ln(4x) — 等間隔の平行移動、差は定数</div>
+    </div>
+    <div>
+      <h3>幾何学的意味</h3>
+      <p>元の空間：x 軸方向の「スケーリング」（c 倍）</p>
+      <p>↓ 対数をとる</p>
+      <p>対数空間：y 軸方向の「平行移動」（log c を加算）</p>
+      <br>
+      <div class="note">これが対数座標軸が指数関数的な増加を示す曲線を<strong>直線</strong>に変換できる理由である——乗算の関係が加算（線形）の関係に変わる。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 3 ===== -->
+<div class="card">
+  <h2>③ ダイナミックレンジの圧縮：大きな比率が小さな間隔に</h2>
+  <div class="eq-box">f/g = 10<sup>6</sup> &nbsp;→&nbsp; log f − log g = 6（差はわずか6単位）</div>
+  <canvas id="c3" width="800" height="260"></canvas>
+  <div class="caption">図3：元の空間で100万倍もの差がある量が、対数空間ではわずか6目盛りの差に収まる</div>
+  <p style="margin-top:12px">対数の差をとることで、<strong>元の値の大小に関わらず</strong>、グラフ上の縦方向の間隔は観察可能な範囲に圧縮される。<br>これが対数変換が<strong>ハイダイナミックレンジ</strong>画像を扱える理由である。</p>
+</div>
+
+<!-- ===== SECTION 4 ===== -->
+<div class="card">
+  <h2>④ 画像処理への応用：ホモモルフィックフィルタリング</h2>
+  <p>画像輝度 = 照明成分 × 反射成分：</p>
+  <div class="eq-box">f(x,y) = i(x,y) · r(x,y)</div>
+  <p>対数をとると、乗算が加算に変わる：</p>
+  <div class="eq-box">log f = <span style="color:#1565c0">log i</span> + <span style="color:#2e7d32">log r</span></div>
+  <p>対数域で<strong>低周波成分を減算</strong>（照明除去）することは、元の域で<strong>照明の影響を除去</strong>することと等価である：</p>
+  <div class="eq-box">log f − <span style="color:#1565c0">log i</span> = <span style="color:#2e7d32">log r</span> &nbsp;→&nbsp; 反射率（物体のテクスチャ）を復元</div>
+  <canvas id="c4" width="800" height="240"></canvas>
+  <div class="caption">図4：ホモモルフィックフィルタリングの流れ — 対数域で減算することで照明を除去し、テクスチャの細部を保持する</div>
+</div>
+
+<!-- ===== SECTION 5: 差関数の形態 ===== -->
+<div class="card">
+  <h2>⑤ 差関数の形態変化</h2>
+  <p>2つの対数関数の関係によって、差関数はさまざまな形態をとる：</p>
+  <div class="grid2">
+    <div>
+      <canvas id="c5a" width="370" height="260"></canvas>
+      <div class="caption">ケースA：ln(x²) − ln(x) = ln(x)、差もまた対数関数（単調増加）</div>
+    </div>
+    <div>
+      <canvas id="c5b" width="370" height="260"></canvas>
+      <div class="caption">ケースB：ln(x+1) − ln(x) = ln(1+1/x)、差は単調減少して0に近づく</div>
+    </div>
+  </div>
+  <div class="note" style="margin-top:16px">📌 <strong>まとめ：</strong>分子が分母より速く増加すれば差関数は増加する。両者の増加が近ければ、差関数は0に収束する（曲線が最終的に「収束」する）。</div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+// ---- 共通ユーティリティ ----
+function initCtx(id) {
+  const c = document.getElementById(id);
+  c.width = c.offsetWidth || c.width;
+  return { ctx: c.getContext('2d'), W: c.width, H: c.height };
+}
+function axes(ctx, W, H, ox, oy, xscale, yscale, xmax, ymin, ymax, labels) {
+  ctx.save();
+  ctx.strokeStyle = '#aaa'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(0, oy); ctx.lineTo(W, oy); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(ox, 0); ctx.lineTo(ox, H); ctx.stroke();
+  ctx.fillStyle = '#888'; ctx.font = '11px sans-serif';
+  for (let x = 1; x <= xmax; x++) {
+    const px = ox + x * xscale;
+    ctx.beginPath(); ctx.moveTo(px, oy-3); ctx.lineTo(px, oy+3); ctx.stroke();
+    ctx.fillText(x, px-4, oy+14);
+  }
+  for (let y = Math.ceil(ymin); y <= Math.floor(ymax); y++) {
+    if (y === 0) continue;
+    const py = oy - y * yscale;
+    ctx.beginPath(); ctx.moveTo(ox-3, py); ctx.lineTo(ox+3, py); ctx.stroke();
+    ctx.fillText(y, ox-18, py+4);
+  }
+  if (labels) {
+    ctx.fillStyle='#555'; ctx.font='12px sans-serif';
+    ctx.fillText(labels.x || 'x', W-16, oy-6);
+    ctx.fillText(labels.y || 'y', ox+6, 12);
+  }
+  ctx.restore();
+}
+function plotFn(ctx, ox, oy, xscale, yscale, fn, xmin, xmax, color, lw=2) {
+  ctx.save(); ctx.strokeStyle=color; ctx.lineWidth=lw;
+  ctx.beginPath(); let first=true;
+  for (let px=0; px<=800; px++) {
+    const xval = xmin + (px/800)*(xmax-xmin);
+    const yval = fn(xval);
+    if (!isFinite(yval)) { first=true; continue; }
+    const sx = ox + xval*xscale, sy = oy - yval*yscale;
+    if (first) { ctx.moveTo(sx,sy); first=false; } else ctx.lineTo(sx,sy);
+  }
+  ctx.stroke(); ctx.restore();
+}
+
+(function(){
+  const {ctx,W,H} = initCtx('c1');
+  const ox=50, oy=H/2+20, xs=80, ys=60;
+  axes(ctx,W,H,ox,oy,xs,ys,8,-2,3,{x:'x',y:'y'});
+  ctx.save(); ctx.globalAlpha=0.12; ctx.fillStyle='#7b1fa2';
+  ctx.beginPath();
+  for(let px=0;px<=700;px++){const xv=0.05+px/700*7.95;const sy1=oy-Math.log(xv)*ys;ctx.lineTo(ox+xv*xs,sy1);}
+  for(let px=700;px>=0;px--){const xv=0.05+px/700*7.95;const sy2=oy-Math.log(3*xv)*ys;ctx.lineTo(ox+xv*xs,sy2);}
+  ctx.closePath(); ctx.fill(); ctx.restore();
+  plotFn(ctx,ox,oy,xs,ys,x=>Math.log(x),0.05,8,'#1565c0',2.5);
+  plotFn(ctx,ox,oy,xs,ys,x=>Math.log(3*x),0.05,8,'#c62828',2.5);
+  const xd=3, y1=Math.log(xd), y2=Math.log(3*xd);
+  ctx.save(); ctx.setLineDash([5,4]); ctx.strokeStyle='#7b1fa2'; ctx.lineWidth=1.5;
+  ctx.beginPath(); ctx.moveTo(ox+xd*xs,oy-y1*ys); ctx.lineTo(ox+xd*xs,oy-y2*ys); ctx.stroke();
+  ctx.setLineDash([]);
+  const arrX=ox+xd*xs, top=oy-y2*ys, bot=oy-y1*ys;
+  ctx.beginPath(); ctx.moveTo(arrX,top); ctx.lineTo(arrX-5,top+9); ctx.lineTo(arrX+5,top+9); ctx.closePath(); ctx.fillStyle='#7b1fa2'; ctx.fill();
+  ctx.beginPath(); ctx.moveTo(arrX,bot); ctx.lineTo(arrX-5,bot-9); ctx.lineTo(arrX+5,bot-9); ctx.closePath(); ctx.fill();
+  ctx.font='bold 12px sans-serif'; ctx.fillStyle='#7b1fa2';
+  ctx.fillText('間隔 = ln3 ≈ 1.10', arrX+8, (top+bot)/2+4);
+  ctx.restore();
+  ctx.font='13px sans-serif';
+  ctx.fillStyle='#1565c0'; ctx.fillRect(ox+10,12,24,3); ctx.fillText('y = ln(x)',ox+38,17);
+  ctx.fillStyle='#c62828'; ctx.fillRect(ox+10,24,24,3); ctx.fillText('y = ln(3x)',ox+38,29);
+  ctx.fillStyle='#7b1fa2'; ctx.fillRect(ox+130,12,24,3); ctx.fillText('差 = ln(3) = 定数',ox+158,17);
+})();
+
+(function(){
+  const {ctx,W,H} = initCtx('c2');
+  const ox=45,oy=H/2+30,xs=50,ys=45;
+  axes(ctx,W,H,ox,oy,xs,ys,6,-3,3,{x:'x',y:'y'});
+  const cols=['#1565c0','#2e7d32','#e65100'];
+  const cs=[1,2,4];
+  cs.forEach((c,i)=>{ plotFn(ctx,ox,oy,xs,ys,x=>Math.log(c*x),0.05,6,cols[i],2); });
+  ctx.font='12px sans-serif';
+  ['y=ln(x)','y=ln(2x)','y=ln(4x)'].forEach((lbl,i)=>{
+    ctx.fillStyle=cols[i]; ctx.fillRect(10,10+i*18,18,2.5); ctx.fillText(lbl,32,14+i*18);
+  });
+  ctx.save(); ctx.setLineDash([4,3]); ctx.strokeStyle='#999'; ctx.lineWidth=1;
+  [1,2,4].forEach(c=>{
+    const xd=4.5, py=oy-Math.log(c*xd)*ys, px=ox+xd*xs;
+    ctx.beginPath(); ctx.moveTo(ox,py); ctx.lineTo(px,py); ctx.stroke();
+  });
+  ctx.restore();
+})();
+
+(function(){
+  const {ctx,W,H} = initCtx('c3');
+  const logy = H*0.25, origY = H*0.72;
+  const margin=80, rw=W-margin*2;
+  ctx.fillStyle='#e3f2fd'; ctx.fillRect(margin,origY-18,rw,36);
+  ctx.strokeStyle='#90caf9'; ctx.lineWidth=1; ctx.strokeRect(margin,origY-18,rw,36);
+  ctx.font='bold 13px sans-serif'; ctx.fillStyle='#0d47a1'; ctx.fillText('元の空間（線形）',margin,origY-24);
+  const vals=[1,10,1000,1e6];
+  const maxv=1e6;
+  const cols=['#1565c0','#2e7d32','#e65100','#c62828'];
+  vals.forEach((v,i)=>{
+    const px=margin+v/maxv*rw;
+    ctx.fillStyle=cols[i]; ctx.beginPath(); ctx.arc(px,origY,7,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle='#333'; ctx.font='11px sans-serif'; ctx.textAlign='center';
+    ctx.fillText(v>=1000?(v>=1e6?'10⁶':'10³'):String(v),px,origY+22);
+  });
+  ctx.textAlign='left';
+  ctx.fillStyle='#f3e5f5'; ctx.fillRect(margin,logy-18,rw,36);
+  ctx.strokeStyle='#ce93d8'; ctx.lineWidth=1; ctx.strokeRect(margin,logy-18,rw,36);
+  ctx.font='bold 13px sans-serif'; ctx.fillStyle='#6a1b9a'; ctx.fillText('対数空間 log₁₀',margin,logy-24);
+  const logmax=6;
+  vals.forEach((v,i)=>{
+    const lv=Math.log10(v||0.1);
+    const px=margin+lv/logmax*rw;
+    ctx.fillStyle=cols[i]; ctx.beginPath(); ctx.arc(px,logy,7,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle='#333'; ctx.font='11px sans-serif'; ctx.textAlign='center';
+    ctx.fillText('log='+Math.log10(v).toFixed(0),px,logy+22);
+  });
+  ctx.textAlign='left';
+  vals.forEach((v,i)=>{
+    const pxO=margin+v/maxv*rw, pxL=margin+(Math.log10(v||0.1)/logmax)*rw;
+    ctx.save(); ctx.setLineDash([4,3]); ctx.strokeStyle=cols[i]; ctx.lineWidth=1; ctx.globalAlpha=0.6;
+    ctx.beginPath(); ctx.moveTo(pxO,origY-18); ctx.lineTo(pxL,logy+18); ctx.stroke();
+    ctx.restore();
+  });
+  ctx.fillStyle='#555'; ctx.font='12px sans-serif';
+  ctx.fillText('← 左端に集中し、区別困難', margin, origY-24+14+8);
+  ctx.fillText('← 均等に分布し、明確に識別可能', margin, logy-24+14+8);
+})();
+
+(function(){
+  const {ctx,W,H} = initCtx('c4');
+  const boxes=[
+    {x:20, y:H/2-25, w:110, h:50, label:'f(x,y)\n=i·r', color:'#e3f2fd', border:'#1565c0'},
+    {x:170,y:H/2-25, w:110, h:50, label:'log f\n=log i+log r', color:'#e8f5e9', border:'#2e7d32'},
+    {x:330,y:H/2-25, w:130, h:50, label:'− log i\n(低周波を減算)', color:'#fce4ec', border:'#c62828'},
+    {x:510,y:H/2-25, w:110, h:50, label:'log r\n(反射率)', color:'#f3e5f5', border:'#7b1fa2'},
+    {x:670,y:H/2-25, w:110, h:50, label:'e^(log r) = r\n(テクスチャ)', color:'#fff8e1', border:'#f57f17'},
+  ];
+  const ops=['log をとる','周波数域で減算','保持','exp(·)'];
+  function roundRect(ctx,x,y,w,h,r){
+    ctx.beginPath(); ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+    ctx.arcTo(x+w,y,x+w,y+r,r); ctx.lineTo(x+w,y+h-r);
+    ctx.arcTo(x+w,y+h,x+w-r,y+h,r); ctx.lineTo(x+r,y+h);
+    ctx.arcTo(x,y+h,x,y+h-r,r); ctx.lineTo(x,y+r);
+    ctx.arcTo(x,y,x+r,y,r); ctx.closePath();
+  }
+  boxes.forEach((b,i)=>{
+    ctx.fillStyle=b.color; ctx.strokeStyle=b.border; ctx.lineWidth=2;
+    roundRect(ctx,b.x,b.y,b.w,b.h,8); ctx.fill(); ctx.stroke();
+    ctx.fillStyle='#222'; ctx.font='bold 11px sans-serif'; ctx.textAlign='center';
+    const lines=b.label.split('\n');
+    lines.forEach((l,li)=>ctx.fillText(l,b.x+b.w/2,b.y+22+li*15));
+  });
+  ctx.textAlign='left';
+  for(let i=0;i<boxes.length-1;i++){
+    const bx=boxes[i], nx=boxes[i+1];
+    const x1=bx.x+bx.w, y1=bx.y+bx.h/2, x2=nx.x, y2=nx.y+nx.h/2;
+    ctx.strokeStyle='#888'; ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+    ctx.fillStyle='#888';
+    ctx.beginPath(); ctx.moveTo(x2,y2); ctx.lineTo(x2-10,y2-5); ctx.lineTo(x2-10,y2+5); ctx.closePath(); ctx.fill();
+    ctx.fillStyle='#555'; ctx.font='10px sans-serif'; ctx.textAlign='center';
+    ctx.fillText(ops[i],(x1+x2)/2,y1-8);
+  }
+  ctx.textAlign='left';
+})();
+
+(function(){
+  const {ctx,W,H} = initCtx('c5a');
+  const ox=45,oy=H/2+20,xs=55,ys=50;
+  axes(ctx,W,H,ox,oy,xs,ys,5,-2,3,{x:'x',y:'y'});
+  plotFn(ctx,ox,oy,xs,ys,x=>Math.log(x*x),0.1,5,'#1565c0',2);
+  plotFn(ctx,ox,oy,xs,ys,x=>Math.log(x),0.1,5,'#2e7d32',2);
+  plotFn(ctx,ox,oy,xs,ys,x=>Math.log(x*x)-Math.log(x),0.1,5,'#c62828',2.5);
+  ctx.font='11px sans-serif';
+  [['#1565c0','y=ln(x²)'],['#2e7d32','y=ln(x)'],['#c62828','差=ln(x)（単調増加）']].forEach(([c,l],i)=>{
+    ctx.fillStyle=c; ctx.fillRect(6,8+i*16,18,2.5); ctx.fillText(l,28,13+i*16);
+  });
+})();
+
+(function(){
+  const {ctx,W,H} = initCtx('c5b');
+  const ox=45,oy=H-40,xs=40,ys=130;
+  axes(ctx,W,H,ox,oy,xs,ys,7,0,2,{x:'x',y:'y'});
+  plotFn(ctx,ox,oy,xs,ys,x=>Math.log(x+1),0.05,7,'#1565c0',2);
+  plotFn(ctx,ox,oy,xs,ys,x=>Math.log(x),0.05,7,'#2e7d32',2);
+  plotFn(ctx,ox,oy,xs,ys,x=>Math.log(x+1)-Math.log(x),0.05,7,'#c62828',2.5);
+  ctx.save(); ctx.setLineDash([5,4]); ctx.strokeStyle='#aaa'; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.moveTo(ox,oy); ctx.lineTo(W,oy); ctx.stroke();
+  ctx.restore();
+  ctx.fillStyle='#999'; ctx.font='10px sans-serif'; ctx.fillText('y=0 漸近線',W-90,oy-5);
+  ctx.font='11px sans-serif';
+  [['#1565c0','y=ln(x+1)'],['#2e7d32','y=ln(x)'],['#c62828','差→0（単調減少）']].forEach(([c,l],i)=>{
+    ctx.fillStyle=c; ctx.fillRect(6,8+i*16,18,2.5); ctx.fillText(l,28,13+i*16);
+  });
+})();
+</script>
+</body>
+</html>
